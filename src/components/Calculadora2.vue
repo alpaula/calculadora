@@ -12,27 +12,27 @@
 			</section>
 			<section class="conteudo-botoes">
 				<div class="conteudoBotoes-caixa">
-					<button class="conteudoBotoesCaixa-nume" @click="('')">C</button>
-					<button class="conteudoBotoesCaixa-nume" @click="('')">+/-</button>
-					<button class="conteudoBotoesCaixa-nume" @click="('')">%</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('7')">7</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('8')">8</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('9')">9</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('4')">4</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('5')">5</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('6')">6</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('1')">1</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('2')">2</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('3')">3</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('0')">0</button>
-					<button class="conteudoBotoesCaixa-nume" @click="write('.')">.</button>
+					<button class="conteudoBotoesCaixa-item" @click="('')">C</button>
+					<button class="conteudoBotoesCaixa-item" @click="('')">+/-</button>
+					<button class="conteudoBotoesCaixa-item" @click="('')">%</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('7')">7</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('8')">8</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('9')">9</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('4')">4</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('5')">5</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('6')">6</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('1')">1</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('2')">2</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('3')">3</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('0')">0</button>
+					<button class="conteudoBotoesCaixa-item" @click="write('.')">.</button>
 				</div>
 				<div class="conteudoBotoes-pontos">					
-					<button class="conteudoBotoesPontos-sinais divi" @click="setOp('/')">/</button>
-					<button class="conteudoBotoesPontos-sinais mult" @click="setOp('*')">x</button>
-					<button class="conteudoBotoesPontos-sinais menos" @click="setOp('-')">-</button>
-					<button class="conteudoBotoesPontos-sinais mais" @click="setOp('+')">+</button>
-					<button class="conteudoBotoesPontos-sinais igual" @click="calc('=')">=</button>
+					<button class="conteudoBotoesPontos-item divi" @click="setOp('/')">/</button>
+					<button class="conteudoBotoesPontos-item mult" @click="setOp('*')">x</button>
+					<button class="conteudoBotoesPontos-item menos" @click="setOp('-')">-</button>
+					<button class="conteudoBotoesPontos-item mais" @click="setOp('+')">+</button>
+					<button class="conteudoBotoesPontos-item igual" @click="calc('=')">=</button>
 				</div>
 			</section>
 		</main>
@@ -80,69 +80,126 @@ export default{
 }	
 </script>
 <style scoped>
-.body{
-	margin: 0;
-	padding: 0;
-	height: 90vh;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.conteudo{
-	height: 60vh;
-	width: 250px;
-	border: 1px #b4b4b4 solid;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-flow: row wrap;
-	border-radius: 8px;
-}
-.conteudo-cabecalho{
-	height: 2vh;
-	width: 100%;
-	margin: 2%;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-}
-.conteudoCabecalho-circulo{
-	height: 9px;
-	width: 9px;
-	margin: 4px;
-	border-radius: 100%;
-	background: #DDDADD;
-}
-.conteudo-tela{
-	width: 100%;
-}
-.conteudoTela-resultado{
-	height: 9vh;
-	width: 100%;
-	border: 0;
-	margin: 0;
-	text-align: right;
-	font-size: 40px;
-	font-weight: bolder;
-	color: #000;
-}
-.conteudoTela-resumo{
-
-}
-.conteudo-botoes{
-	color: #717171;
-}
-.conteudoBotoes-caixa{
-
-}
-.conteudoBotoesCaixa-nume{
-
-}
-.conteudoBotoes-pontos{
-
-}
-.conteudoBotoesPontos-sinais{
-
-}
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+	.body{
+		margin: 0;
+		padding: 0;
+		height: 90vh;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.conteudo{
+		height: 70vh;
+		width: 250px;
+		border: 1px #b4b4b4 solid;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-flow: row wrap;
+		border-radius: 8px;
+	}
+	.conteudo-cabecalho{
+		height: 3vh;
+		width: 100%;
+		padding: 2%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		background-color: #F7F7F8;
+		border-top-right-radius: 8px;
+		border-top-left-radius: 8px;
+	}
+	.conteudoCabecalho-circulo{
+		height: 9px;
+		width: 9px;
+		margin: 4px;
+		border-radius: 100%;
+		background: #DDDADD;
+	}
+	.conteudo-tela{
+		width: 100%;
+		background-color: #F7F7F8;
+		font-family: 'Quicksand', sans-serif;
+	}
+	.conteudoTela-resultado{
+		height: 9vh;
+		width: 100%;
+		border: 0;
+		margin: 0;
+		text-align: right;
+		font-size: 40px;
+		font-weight: bolder;
+		color: #000;
+	}
+	.conteudoTela-resumo{
+		height: 5vh;
+		width: 100%;
+		margin: 2%;
+		text-align: right;
+	}
+	.conteudo-botoes{
+		height: 50vh;
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		font-family: 'Quicksand', sans-serif;
+	}
+	.conteudoBotoes-caixa{
+		height: 50vh;
+		width: 67%;
+		padding: 0 2%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.conteudoBotoesCaixa-item{
+		height: 31px;
+		width: 36px;
+		margin: 0 2%;
+		border: 0;
+		background: #fff;
+		color: #717171;
+		font-size: 18px
+		font-weight: bold;
+	}
+	.conteudoBotoes-pontos{
+		height: 51vh;
+		width: 29%;
+		padding-bottom: 2%;
+		display: flex;
+		flex-flow: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.conteudoBotoesPontos-item{
+		height: 37px;
+		width: 37px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		border-radius: 100%;
+		color: #fff;
+		font-weight: bold;
+		font-size: 20px;
+	}
+	.divi{
+		background-color: #D160E8;
+	}
+	.mult{
+		background-color: #ee6d66;
+	}
+	.menos{
+		background-color: #7BB4F7;
+	}
+	.mais{
+		background-color: #F4845B;
+	}
+	.igual{
+		background-color: #2ECC86;
+	}
 </style>
