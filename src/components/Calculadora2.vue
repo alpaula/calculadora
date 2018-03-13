@@ -8,11 +8,11 @@
 			</section>
 			<section class="conteudo-tela">
 				<p class="conteudoTela-resultado">{{visor}}</p>
-				<p class="conteudoTela-resumo">0,0</p>
+				<p class="conteudoTela-resumo">{{value1}} {{operator}} {{value2}}</p>
 			</section>
 			<section class="conteudo-botoes">
 				<div class="conteudoBotoes-caixa">
-					<button class="conteudoBotoesCaixa-item" @click="('')">C</button>
+					<button class="conteudoBotoesCaixa-item" @click="clear('')">C</button>
 					<button class="conteudoBotoesCaixa-item" @click="('')">+/-</button>
 					<button class="conteudoBotoesCaixa-item" @click="('')">%</button>
 					<button class="conteudoBotoesCaixa-item" @click="write('7')">7</button>
@@ -66,7 +66,8 @@ export default{
 		calc(){
 			if (this.operator === '/') {
 				if (this.value2 == '' || this.value2 == 0) {
-					return alert('Preencha todos os campos!!')} else{
+					return alert('Preencha todos os campos!!')
+				} else{
 						return this.visor = this.value1 / this.value2}
 			}
 			else if (this.operator === '*') {
@@ -75,12 +76,19 @@ export default{
 				return this.visor = this.value1 - this.value2}
 			else {
 				return this.visor = this.value1 + this.value2}
+		},
+		clear(){
+			this.visor = 0
+			this.value1 = ''
+			this.value2 = ''
+			this.operator = ''
 		}
 	}
 }	
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 	.body{
 		margin: 0;
 		padding: 0;
@@ -93,12 +101,12 @@ export default{
 	.conteudo{
 		height: 70vh;
 		width: 250px;
-		border: 1px #b4b4b4 solid;
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-start;
 		flex-flow: row wrap;
 		border-radius: 8px;
+		box-shadow: 7px 7px 20px #aaa;
 	}
 	.conteudo-cabecalho{
 		height: 3vh;
@@ -120,6 +128,7 @@ export default{
 	}
 	.conteudo-tela{
 		width: 100%;
+		padding: 0 2%;
 		background-color: #F7F7F8;
 		font-family: 'Quicksand', sans-serif;
 	}
@@ -138,10 +147,14 @@ export default{
 		width: 100%;
 		margin: 2%;
 		text-align: right;
+		font-family: 'Quicksand', sans-serif;
+		color: #717171;
+		font-weight: bold;
 	}
 	.conteudo-botoes{
 		height: 50vh;
 		width: 100%;
+		margin: 1%;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: flex-start;
@@ -149,7 +162,7 @@ export default{
 		font-family: 'Quicksand', sans-serif;
 	}
 	.conteudoBotoes-caixa{
-		height: 50vh;
+		height: 48vh;
 		width: 67%;
 		padding: 0 2%;
 		display: flex;
@@ -164,11 +177,15 @@ export default{
 		border: 0;
 		background: #fff;
 		color: #717171;
-		font-size: 18px
+		font-size: 18px;
 		font-weight: bold;
 	}
+	.conteudoBotoesCaixa-item:focus{
+		outline: none;
+		color: #000;
+	}
 	.conteudoBotoes-pontos{
-		height: 51vh;
+		height: 49vh;
 		width: 29%;
 		padding-bottom: 2%;
 		display: flex;
@@ -186,6 +203,7 @@ export default{
 		color: #fff;
 		font-weight: bold;
 		font-size: 20px;
+		box-shadow: 4px 4px 20px #868686;
 	}
 	.divi{
 		background-color: #D160E8;
