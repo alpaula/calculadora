@@ -68,14 +68,14 @@ export default{
 				if (this.value2 == '' || this.value2 == 0) {
 					return alert('Preencha todos os campos!!')
 				} else{
-						return this.visor = this.value1 / this.value2}
+						return this.visor = parseFloat(this.value1) / parseFloat(this.value2)}
 			}
 			else if (this.operator === '*') {
-				return this.visor = this.value1 * this.value2}
+				return this.visor = parseFloat(this.value1) * parseFloat(this.value2)}
 			else if (this.operator === '-') {
-				return this.visor = this.value1 - this.value2}
+				return this.visor = parseFloat(this.value1) - parseFloat(this.value2)}
 			else {
-				return this.visor = this.value1 + this.value2}
+				return this.visor = parseFloat(this.value1) + parseFloat(this.value2)}
 		},
 		clear(){
 			this.visor = 0
